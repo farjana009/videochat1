@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>WebRTC Video Demo</title>
+    <link rel = "stylesheet" href = "node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+</head>
+
+<style>
+
+    body {
+        background: #eee;
+        padding: 5% 0;
+    }
+
+    video {
+        background: black;
+        border: 1px solid gray;
+    }
+
+    .call-page {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+    }
+
+    #localVideo {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    #remoteVideo {
+        width: 500px;
+        height: 500px;
+    }
+
+</style>
+
+<body>
+
+<div id = "loginPage" class = "container text-center">
+
+    <div class = "row">
+        <div class = "col-md-6 col-md-offset-4">
+
+            <h2>WebRTC Audio Demo. Please sign in</h2>
+            <label for = "usernameInput" class = "sr-only">Login</label>
+            <input type = "email" id = "usernameInput" class = "form-control formgroup" placeholder = "Please enter your mobile number"
+                   required = "" autofocus = "">
+            <button style="margin-top: 15px;" id = "loginBtn" class = "btn btn-primary btnblock">
+                Sign in</button>
+
+        </div>
+    </div>
+
+</div>
+
+<div id = "callPage" class = "call-page">
+    <video style="display: none;" id = "localVideo" autoplay playsinline></video>
+    <video style="display: none;" id = "remoteVideo" autoplay playsinline></video>
+
+    <div class = "row text-center">
+        <div class = "col-md-8">
+            <input style="margin-bottom: 15px;" class = "form-control formgroup" id = "callToUsernameInput" type = "text"
+                   placeholder = "Enter mobile number to call" />
+            <button id = "callBtn" class = "btn-success btn">Call</button>
+            <button id = "hangUpBtn" class = "btn-danger btn">Hang Up</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="client.js"></script>
+<!--<script src="server.js"></script>-->
+
+</body>
+
+</html>		
